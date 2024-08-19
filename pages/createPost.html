@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Welcome to DEV community</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="../img/favicon.png" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			media="screen"
+			href="../css/main.css"
+		/>
+	</head>
+	<body>
+		<div class="post-container">
+			<form id="post">
+				<h4>Write Post</h4>
+				<label for="heading">Heading</label>
+				<input
+					type="text"
+					id="heading"
+					placeholder="Enter your post title"
+					required
+				/>
+				<select name="categories" id="categories">
+					Category
+					<option selected disabled>Select your post category</option>
+					<option value="IT">IT</option>
+					<option value="New Technology">New Technology</option>
+					<option value="Science">Science</option>
+					<option value="Social">Social</option>
+					<option value="Programing">Programing</option>
+					<option value="Solution">Solutions</option>
+					<option value="News">News</option>
+				</select>
+				<label for="post-content">Post Content</label>
+				<textarea
+					rows="10"
+					id="post-content"
+					placeholder="Write your post content..."
+				></textarea>
+				<button type="submit">Publish</button>
+			</form>
+		</div>
+
+		<!-- Script -->
+		<script type="module" src="../js/createPost.js"></script>
+		<script type="module" src="../js/firebase.mjs"></script>
+	</body>
+</html>
