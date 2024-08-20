@@ -144,3 +144,27 @@ onAuthStateChanged(auth, async (user) => {
 // 			alert(error);
 // 		});
 // });
+
+let searchInput = document.getElementById("search");
+console.log(searchInput);
+
+searchInput.addEventListener("keypress", () => {
+	const searchValue = searchInput.value.toLowerCase();
+	const posts = document.querySelectorAll(".postBox");
+	for (let i = 0; i < posts.length; i++) {
+		const element = posts[i].innerText.toLowerCase();
+		if (element.includes(searchValue)) {
+			posts[i].style.display = "block";
+		} else {
+			posts[i].style.display = "none";
+		}
+	}
+	// posts.forEach((post) => {
+	// 	console.log(post.innerText);
+	// 	if (postContent.includes(searchValue)) {
+	// 		post.style.display = "block";
+	// 	} else {
+	// 		post.style.display = "none";
+	// 	}
+	// });
+});

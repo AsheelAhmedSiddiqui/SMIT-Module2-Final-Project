@@ -29,8 +29,8 @@ postForm.addEventListener("submit", async (e) => {
 			const uid = user.uid;
 			try {
 				const querySnapshot = await getDocs(collection(db, "users"));
-				querySnapshot.forEach(async (doc) => {
-					let data = doc.data();
+				querySnapshot.forEach(async (document) => {
+					let data = document.data();
 					if (data.email === user.email) {
 						console.log(data);
 						const docRef = await addDoc(collectionRef, {
@@ -46,9 +46,19 @@ postForm.addEventListener("submit", async (e) => {
 							}-${new Date().getFullYear()}`,
 						});
 						console.log("Document written with ID: ", docRef.id);
-						// await setDoc(doc(db, "posts", docRef.id), {
-						// 	id: docRef.id,
-						// });
+						await setDoc(doc(db, "posts", docRef.id), {
+							id: docRef.id,
+							heading: heading.value,
+							authorImage: data.image,
+							authorEmail: data.email,
+							authorName:
+								data.userName[0].toUpperCase() + data.userName.slice(1),
+							category: category.value,
+							postContent: postContent.value,
+							data: `${new Date().getDate()}-${
+								new Date().getMonth() + 1
+							}-${new Date().getFullYear()}`,
+						});
 						e.target[3].disabled = false;
 						e.target[3].innerText = "Publish";
 						window.location.href = "../index.html";

@@ -51,7 +51,7 @@ onAuthStateChanged(auth, async (user) => {
 						</div>
 						<h1>${post.heading}</h1>
 						<p>${post.postContent}</p>
-						<button>Delete</button>
+						<button class="deleteBtn">Delete</button>
 					</div>
 			`;
 			}
