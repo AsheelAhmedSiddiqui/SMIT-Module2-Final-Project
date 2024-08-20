@@ -51,7 +51,7 @@ postForm.addEventListener("submit", async (e) => {
 						// });
 						e.target[3].disabled = false;
 						e.target[3].innerText = "Publish";
-						window.location.href = "./index.html";
+						window.location.href = "../index.html";
 					}
 				});
 
