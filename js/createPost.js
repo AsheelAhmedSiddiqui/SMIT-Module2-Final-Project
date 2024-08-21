@@ -52,7 +52,7 @@ postForm.addEventListener("submit", async (e) => {
 							authorImage: data.image,
 							authorEmail: data.email,
 							authorName:
-								data.userName[0].toUpperCase() + data.userName.slice(1),
+								data.username[0].toUpperCase() + data.username.slice(1),
 							category: category.value,
 							postContent: postContent.value,
 							data: `${new Date().getDate()}-${
